@@ -49,31 +49,21 @@
   },
   "devDependencies": {
     "@angular/compiler-cli": "~4.2.6",
-    "@ngtools/webpack": "~1.5.3",
     "babel-traverse": "6.11.4",
     "babel-types": "6.11.1",
     "babylon": "6.8.4",
     "codelyzer": "^3.0.1",
-    "copy-webpack-plugin": "~4.0.1",
-    "extract-text-webpack-plugin": "~2.1.0",
     "fs-extra": "^0.30.0",
     "glob": "^7.1.2",
     "lazy": "1.0.11",
     "markdown-snippet-injector": "^0.2.0",
-    "nativescript-css-loader": "~0.26.0",
     "nativescript-dev-typescript": "^0.4.5",
-    "nativescript-dev-webpack": "next",
     "opener": "^1.4.1",
-    "raw-loader": "~0.5.1",
-    "resolve-url-loader": "~2.0.2",
     "rimraf": "^2.5.3",
     "tar.gz": "^1.0.5",
     "tns-platform-declarations": "^3.0.1",
     "tslint": "^5.4.2",
-    "typescript": "~2.3.4",
-    "webpack": "~2.6.1",
-    "webpack-bundle-analyzer": "^2.8.2",
-    "webpack-sources": "~1.0.1"
+    "typescript": "~2.3.4"
   },
   "scripts": {
     "pretsc": "npm install",
@@ -84,13 +74,6 @@
     "build": "node scripts/build.js",
     "postbuild": "npm run inject && npm run archive",
     "inject": "mdinject --root=app --docsroot=dist/code-samples --sourceext=\".ts|.css|.html\" --snippettitles=\"TypeScript|CSS|HTML\"",
-    "archive": "node scripts/archive.js",
-    "ns-bundle": "ns-bundle",
-    "publish-ios-bundle": "npm run ns-bundle --ios --publish-app",
-    "generate-android-snapshot": "generate-android-snapshot --targetArchs arm,arm64,ia32 --install",
-    "start-android-bundle": "npm run ns-bundle --android --run-app",
-    "start-ios-bundle": "npm run ns-bundle --ios --run-app",
-    "build-android-bundle": "npm run ns-bundle --android --build-app",
-    "build-ios-bundle": "npm run ns-bundle --ios --build-app"
+    "archive": "node scripts/archive.js"
   }
 }
