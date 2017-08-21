@@ -5,7 +5,7 @@ import { ActionBarExamplesComponent } from "./action-bar-examples.component";
 import { ActionItemsComponent } from "./action-items/action-items.component";
 import { NavigationButtonComponent } from "./navigation-button/navigation-button.component";
 import { TitleComponent } from "./title/title.component";
-import { TitleAndNavButtonModule } from "../../directives/title-and-nav-button.module";
+import { SharedModule } from "../../shared/shared.module";
 
 export const routes = [
     {
@@ -32,9 +32,9 @@ export const routes = [
 @NgModule({
     schemas: [NO_ERRORS_SCHEMA],
     imports: [
-        TitleAndNavButtonModule,
         NativeScriptCommonModule,
         NativeScriptRouterModule,
+        SharedModule,
     ],
     declarations: [
         ActionBarExamplesComponent,

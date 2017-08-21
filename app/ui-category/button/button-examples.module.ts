@@ -3,7 +3,7 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { NativeScriptCommonModule } from "nativescript-angular/common";
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
 
-import { TitleAndNavButtonModule } from "../../directives/title-and-nav-button.module";
+import { SharedModule } from "../../shared/shared.module";
 import { ButtonExamplesComponent } from "./button-examples.component";
 import { ButtonTapEventComponent } from "./tap-event/tap-event.component";
 
@@ -22,10 +22,10 @@ export const routes = [
 @NgModule({
     schemas: [NO_ERRORS_SCHEMA],
     imports: [
-        TitleAndNavButtonModule,
         NativeScriptCommonModule,
         NativeScriptRouterModule,
         NativeScriptFormsModule,
+        SharedModule,
     ],
     declarations: [
         ButtonExamplesComponent,

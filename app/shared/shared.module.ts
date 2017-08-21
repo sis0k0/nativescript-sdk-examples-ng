@@ -14,4 +14,4 @@ import { ToggleNavButtonDirective } from "./toggle-nav-button.directive";
         ToggleNavButtonDirective,
     ],
 })
-export class TitleAndNavButtonModule { }
+export class SharedModule { }

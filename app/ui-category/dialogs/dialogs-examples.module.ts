@@ -2,7 +2,7 @@ import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { NativeScriptCommonModule } from "nativescript-angular/common";
 
-import { TitleAndNavButtonModule } from "../../directives/title-and-nav-button.module";
+import { SharedModule } from "../../shared/shared.module";
 import { DialogsExamplesComponent } from "./dialogs-examples.component";
 import { ActionDialogComponent } from "./action-dialog/action-dialog.component";
 import { AlertDialogComponent } from "./alert-dialog/alert-dialog.component";
@@ -45,9 +45,9 @@ export const routes = [
 @NgModule({
     schemas: [NO_ERRORS_SCHEMA],
     imports: [
-        TitleAndNavButtonModule,
         NativeScriptCommonModule,
         NativeScriptRouterModule,
+        SharedModule,
     ],
     declarations: [
         DialogsExamplesComponent,
