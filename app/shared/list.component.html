@@ -1,0 +1,13 @@
+<ListView [items]="links" class="list-group"
+    sdkExampleTitle sdkToggleNavButton>
+
+    <ng-template let-item="item">
+        <Label
+            [text]="item | sdkListName"
+            [nsRouterLink]="item"
+            class="list-group-item"
+        ></Label>
+    </ng-template>
+
+</ListView>
+
