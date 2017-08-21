@@ -1,9 +1,0 @@
-<StackLayout sdkExampleTitle sdkToggleNavButton>
-    <Label text="Apply pan gesture inside the box" class="h3 p-15 text-left" ></Label>
-    <!-- >> pan-html -->
-    <GridLayout (pan)="onPan($event)" class="bg-primary p-15 m-15" width="200" height="200" ></GridLayout>
-    <!-- << pan-html -->
-    <Label [text]="'Pan deltaX: ' + deltaX" textWrap="true" class="h3 p-l-15 p-r-15 p-t-15 text-left"></Label>
-    <Label [text]="'Pan deltaY: ' + deltaY" textWrap="true" class="h3 p-l-15 p-r-15 p-t-15 text-left"></Label>
-    <Label [text]="'Pan state: ' + state" textWrap="true" class="h3 p-l-15 p-r-15 p-t-15 text-left"></Label>
-</StackLayout>

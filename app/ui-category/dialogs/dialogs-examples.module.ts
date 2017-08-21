@@ -1,15 +1,16 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { NativeScriptCommonModule } from "nativescript-angular/common";
+
+import { TitleAndNavButtonModule } from "../../directives/title-and-nav-button.module";
 import { DialogsExamplesComponent } from "./dialogs-examples.component";
 import { ActionDialogComponent } from "./action-dialog/action-dialog.component";
 import { AlertDialogComponent } from "./alert-dialog/alert-dialog.component";
 import { ConfirmDialogComponent } from "./confirm-dialog/confirm-dialog.component";
 import { LoginDialogComponent } from "./login-dialog/login-dialog.component";
 import { PromptDialogComponent } from "./prompt-dialog/prompt-dialog.component";
-import { TitleAndNavButtonModule } from "../../directives/title-and-nav-button.module";
 
-export const routerConfig = [
+export const routes = [
     {
         path: "",
         component: DialogsExamplesComponent
@@ -38,7 +39,7 @@ export const routerConfig = [
         path: "prompt",
         component: PromptDialogComponent,
         data: { title: "Prompt dialogs" }
-    }
+    },
 ];
 
 @NgModule({
@@ -47,7 +48,6 @@ export const routerConfig = [
         TitleAndNavButtonModule,
         NativeScriptCommonModule,
         NativeScriptRouterModule,
-        NativeScriptRouterModule.forChild(routerConfig)
     ],
     declarations: [
         DialogsExamplesComponent,
@@ -56,9 +56,6 @@ export const routerConfig = [
         ConfirmDialogComponent,
         LoginDialogComponent,
         PromptDialogComponent
-    ]
+    ],
 })
-
-export class DialogsExamplesModule {
-    constructor() { }
-}
+export class DialogsExamplesModule { }

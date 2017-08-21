@@ -4,7 +4,7 @@ import { NativeScriptCommonModule } from "nativescript-angular/common";
 import { ExamplesListComponent } from "./examples-list.component";
 import { TitleAndNavButtonModule } from "./directives/title-and-nav-button.module";
 
-export const routerConfig = [{
+export const routes = [{
     path: "",
     component: ExamplesListComponent
 }];
@@ -15,11 +15,9 @@ export const routerConfig = [{
         TitleAndNavButtonModule,
         NativeScriptCommonModule,
         NativeScriptRouterModule,
-        NativeScriptRouterModule.forChild(routerConfig)
     ],
-    declarations: [ExamplesListComponent]
+    declarations: [
+        ExamplesListComponent,
+    ],
 })
-
-export class ExamplesListModule {
-    constructor() { }
-}
+export class ExamplesListModule { }

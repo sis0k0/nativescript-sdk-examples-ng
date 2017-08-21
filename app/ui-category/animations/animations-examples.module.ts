@@ -1,13 +1,14 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { NativeScriptCommonModule } from "nativescript-angular/common";
+
+import { TitleAndNavButtonModule } from "../../directives/title-and-nav-button.module";
 import { AnimationsExamplesComponent } from "./animations-examples.component";
 import { AnimatingPropertiesComponent } from "./animating-properties/animating-properties.component";
 import { ChainingAnimationsComponent } from "./chaining-animations/chaining-animations.component";
 import { MultipleViewsComponent } from "./multiple-views/multiple-views.component";
-import { TitleAndNavButtonModule } from "../../directives/title-and-nav-button.module";
 
-export const routerConfig = [
+export const routes = [
     {
         path: "",
         component: AnimationsExamplesComponent
@@ -26,7 +27,7 @@ export const routerConfig = [
         path: "multiple-views",
         component: MultipleViewsComponent,
         data: { title: "Animate multiple views" }
-    }
+    },
 ];
 
 @NgModule({
@@ -35,15 +36,12 @@ export const routerConfig = [
         TitleAndNavButtonModule,
         NativeScriptCommonModule,
         NativeScriptRouterModule,
-        NativeScriptRouterModule.forChild(routerConfig)
     ],
     declarations: [
         AnimationsExamplesComponent,
         AnimatingPropertiesComponent,
-        ChainingAnimationsComponent, MultipleViewsComponent
-    ]
+        ChainingAnimationsComponent,
+        MultipleViewsComponent,
+    ],
 })
-
-export class AnimationsExamplesModule {
-    constructor() { }
-}
+export class AnimationsExamplesModule { }

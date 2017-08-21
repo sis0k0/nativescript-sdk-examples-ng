@@ -1,6 +1,3 @@
-// this import should be first in order to load some required settings (like globals and reflect-metadata)
-// >> ngmodule-config
-// >> (hide)
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { NativeScriptAnimationsModule } from "nativescript-angular/animations";
 import { NgModule, NO_ERRORS_SCHEMA, NgModuleFactoryLoader } from "@angular/core";
@@ -9,12 +6,16 @@ import { NativeScriptFormsModule } from "nativescript-angular/forms";
 
 import { routes } from "./app.routes";
 import { AppComponent } from "./app.component";
-// << (hide)
-import { ModalDialogService } from "nativescript-angular/modal-dialog";
-import { registerElement } from "nativescript-angular/element-registry";
-import { isIOS } from "platform";
 
-declare var GMSServices: any;
+import { ExamplesListModule } from "./examples-list.module";
+import { ActionBarExamplesModule } from "./ui-category/action-bar/action-bar-examples.module";
+import { ActivityIndicatorExamplesModule } from "./ui-category/activity-indicator/activity-indicator-examples.module";
+import { AnimationsExamplesModule } from "./ui-category/animations/animations-examples.module";
+import { ButtonExamplesModule } from "./ui-category/button/button-examples.module";
+import { DatePickerExamplesModule } from "./ui-category/date-picker/date-picker-examples.module";
+import { DialogsExamplesModule } from "./ui-category/dialogs/dialogs-examples.module";
+import { FormattedStringExamplesModule } from "./ui-category/formatted-string/formated-string-examples.module";
+
 
 @NgModule({
     schemas: [NO_ERRORS_SCHEMA],
@@ -28,11 +29,18 @@ declare var GMSServices: any;
         NativeScriptFormsModule,
         NativeScriptRouterModule,
         NativeScriptRouterModule.forRoot(routes),
+
+        ExamplesListModule,
+        ActionBarExamplesModule,
+        ActivityIndicatorExamplesModule,
+        AnimationsExamplesModule,
+        ButtonExamplesModule,
+        DatePickerExamplesModule,
+        DialogsExamplesModule,
+        FormattedStringExamplesModule,
     ],
     providers: [
-        ModalDialogService,
         { provide: NgModuleFactoryLoader, useClass: NSModuleFactoryLoader }
     ]
 })
-// << ngmodule-config
 export class AppModule { }

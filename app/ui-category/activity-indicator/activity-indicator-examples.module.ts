@@ -1,11 +1,12 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { NativeScriptCommonModule } from "nativescript-angular/common";
+
+import { TitleAndNavButtonModule } from "../../directives/title-and-nav-button.module";
 import { ActivityIndicatorExamplesComponent } from "./activity-indicator-examples.component";
 import { SettingBusyComponent } from "./setting-busy/setting-busy.component";
-import { TitleAndNavButtonModule } from "../../directives/title-and-nav-button.module";
 
-export const routerConfig = [
+export const routes = [
     {
         path: "",
         component: ActivityIndicatorExamplesComponent
@@ -14,7 +15,7 @@ export const routerConfig = [
         path: "setting-busy",
         component: SettingBusyComponent,
         data: { title: "Set busy property" }
-    }
+    },
 ];
 
 @NgModule({
@@ -23,14 +24,10 @@ export const routerConfig = [
         TitleAndNavButtonModule,
         NativeScriptCommonModule,
         NativeScriptRouterModule,
-        NativeScriptRouterModule.forChild(routerConfig)
     ],
     declarations: [
         ActivityIndicatorExamplesComponent,
-        SettingBusyComponent
-    ]
+        SettingBusyComponent,
+    ],
 })
-
-export class ActivityIndicatorExamplesModule {
-    constructor() { }
-}
+export class ActivityIndicatorExamplesModule { }

@@ -1,11 +1,12 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { NativeScriptCommonModule } from "nativescript-angular/common";
+
+import { TitleAndNavButtonModule } from "../../directives/title-and-nav-button.module";
 import { FormattedStringExamplesComponent } from "./formated-string-examples.component";
 import { CreateFormattedStringComponent } from "./create-formatted-string/create-formatted-string.component";
-import { TitleAndNavButtonModule } from "../../directives/title-and-nav-button.module";
 
-export const routerConfig = [
+export const routes = [
     {
         path: "",
         component: FormattedStringExamplesComponent
@@ -14,7 +15,7 @@ export const routerConfig = [
         path: "create-formatted-string",
         component: CreateFormattedStringComponent,
         data: { title: "Create Formatted String" }
-    }
+    },
 ];
 
 @NgModule({
@@ -23,11 +24,10 @@ export const routerConfig = [
         TitleAndNavButtonModule,
         NativeScriptCommonModule,
         NativeScriptRouterModule,
-        NativeScriptRouterModule.forChild(routerConfig)
     ],
-    declarations: [FormattedStringExamplesComponent, CreateFormattedStringComponent]
+    declarations: [
+        FormattedStringExamplesComponent,
+        CreateFormattedStringComponent,
+    ],
 })
-
-export class FormattedStringExamplesModule {
-    constructor() { }
-}
+export class FormattedStringExamplesModule { }

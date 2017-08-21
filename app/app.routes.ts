@@ -1,143 +1,54 @@
 // tslint:disable:max-line-length
+
+import { routes as listRoutes } from "./examples-list.module";
+import { routes as actionBarRoutes } from "./ui-category/action-bar/action-bar-examples.module";
+import { routes as activityIndicatorRoutes } from "./ui-category/activity-indicator/activity-indicator-examples.module";
+import { routes as animationsRoutes } from "./ui-category/animations/animations-examples.module";
+import { routes as buttonRoutes } from "./ui-category/button/button-examples.module";
+import { routes as datePickerRoutes } from "./ui-category/date-picker/date-picker-examples.module";
+import { routes as dialogsRoutes } from "./ui-category/dialogs/dialogs-examples.module";
+import { routes as formattedStringRoutes } from "./ui-category/formatted-string/formated-string-examples.module";
+
 export const routes = [
     {
         path: "",
-        loadChildren: "./examples-list.module#ExamplesListModule",
-        data: { title: "NativeScript Code Samples" }
+        data: { title: "NativeScript Code Samples" },
+        children: listRoutes,
+        pathMatch: "full",
     },
     {
         path: "action-bar",
-        loadChildren: "./ui-category/action-bar/action-bar-examples.module#ActionBarExamplesModule",
-        data: { title: "ActionBar" }
+        data: { title: "ActionBar" },
+        children: actionBarRoutes,
     },
     {
         path: "activity-indicator",
-        loadChildren: "./ui-category/activity-indicator/activity-indicator-examples.module#ActivityIndicatorExamplesModule",
-        data: { title: "ActivityIndicator" }
+        data: { title: "ActivityIndicator" },
+        children: activityIndicatorRoutes,
     },
     {
         path: "animations",
-        loadChildren: "./ui-category/animations/animations-examples.module#AnimationsExamplesModule",
-        data: { title: "Animations" }
+        data: { title: "Animations" },
+        children: animationsRoutes,
     },
     {
         path: "button",
-        loadChildren: "./ui-category/button/button-examples.module#ButtonExamplesModule",
-        data: { title: "Button" }
+        data: { title: "Button" },
+        children: buttonRoutes,
     },
     {
         path: "date-picker",
-        loadChildren: "./ui-category/date-picker/date-picker-examples.module#DatePickerExamplesModule",
-        data: { title: "DatePicker" }
+        data: { title: "DatePicker" },
+        children: datePickerRoutes,
     },
     {
         path: "dialogs",
-        loadChildren: "./ui-category/dialogs/dialogs-examples.module#DialogsExamplesModule",
-        data: { title: "Dialogs" }
+        data: { title: "Dialogs" },
+        children: dialogsRoutes,
     },
     {
         path: "formatted-string",
-        loadChildren: "./ui-category/formatted-string/formated-string-examples.module#FormattedStringExamplesModule",
-        data: { title: "Formatted String" }
-    },
-    {
-        path: "gestures",
-        loadChildren: "./ui-category/gestures/gestures-examples.module#GesturesExamplesModule",
-        data: { title: "Gestures" }
-    },
-    {
-        path: "html-view",
-        loadChildren: "./ui-category/htmlview/htmlview-examples.module#HtmlViewExamplesModule",
-        data: { title: "HtmlView" }
-    },
-    {
-        path: "image",
-        loadChildren: "./ui-category/image/image-examples.module#ImageExamplesModule",
-        data: { title: "Image" }
-    },
-    {
-        path: "label",
-        loadChildren: "./ui-category/label/label-examples.module#LabelExamplesModule",
-        data: { title: "Label" }
-    },
-    {
-        path: "layouts",
-        loadChildren: "./ui-category/layouts/layouts-examples.module#LayoutsExamplesModule",
-        data: { title: "Layouts" }
-    },
-    {
-        path: "list-picker",
-        loadChildren: "./ui-category/listpicker/listpicker-examples.module#ListPickerExamplesModule",
-        data: { title: "ListPicker" }
-    },
-    {
-        path: "list-view",
-        loadChildren: "./ui-category/listview/listview-examples.module#ListViewExamplesModule",
-        data: { title: "ListView" }
-    },
-    {
-        path: "progress",
-        loadChildren: "./ui-category/progress/progress-examples.module#ProgressExamplesModule",
-        data: { title: "Progress" }
-    },
-    {
-        path: "scroll-view",
-        loadChildren: "./ui-category/scroll-view/scroll-view-examples.module#ScrollViewExamplesModule",
-        data: { title: "ScrollView" }
-    },
-    {
-        path: "search-bar",
-        loadChildren: "./ui-category/search-bar/search-bar-examples.module#SearchBarExamplesModule",
-        data: { title: "SearchBar" }
-    },
-    {
-        path: "segmented-bar",
-        loadChildren: "./ui-category/segmented-bar/segmented-bar-examples.module#SegmentedBarExamplesModule",
-        data: { title: "SegmentedBar" }
-    },
-    {
-        path: "slider",
-        loadChildren: "./ui-category/slider/slider-examples.module#SliderExamplesModule",
-        data: { title: "Slider" }
-    },
-    {
-        path: "style",
-        loadChildren: "./ui-category/style/style-examples.module#StyleExamplesModule",
-        data: { title: "Style" }
-    },
-    {
-        path: "switch",
-        loadChildren: "./ui-category/switch/switch-examples.module#SwitchExamplesModule",
-        data: { title: "Switch" }
-    },
-    {
-        path: "tab-view",
-        loadChildren: "./ui-category/tab-view/tab-view-examples.module#TabViewExamplesModule",
-        data: { title: "TabView" }
-    },
-    {
-        path: "text-field",
-        loadChildren: "./ui-category/text-field/text-field-examples.module#TextFieldExamplesModule",
-        data: { title: "TextField" }
-    },
-    {
-        path: "text-view",
-        loadChildren: "./ui-category/text-view/text-view-examples.module#TextViewExamplesModule",
-        data: { title: "TextView" }
-    },
-    {
-        path: "time-picker",
-        loadChildren: "./ui-category/time-picker/time-picker-examples.module#TimePickerExamplesModule",
-        data: { title: "TimePicker" }
-    },
-    {
-        path: "web-view",
-        loadChildren: "./ui-category/web-view/web-view-examples.module#WebViewExamplesModule",
-        data: { title: "WebView" }
-    },
-    {
-        path: "angular-directives",
-        loadChildren: "./ui-category/ng-directives/ng-directives-examples.module#NgDirectivesExamplesModule",
-        data: { title: "Angular directives" }
+        data: { title: "Formatted String" },
+        children: formattedStringRoutes,
     },
 ];

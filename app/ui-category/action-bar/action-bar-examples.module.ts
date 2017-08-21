@@ -7,7 +7,7 @@ import { NavigationButtonComponent } from "./navigation-button/navigation-button
 import { TitleComponent } from "./title/title.component";
 import { TitleAndNavButtonModule } from "../../directives/title-and-nav-button.module";
 
-export const routerConfig = [
+export const routes = [
     {
         path: "",
         component: ActionBarExamplesComponent
@@ -35,16 +35,12 @@ export const routerConfig = [
         TitleAndNavButtonModule,
         NativeScriptCommonModule,
         NativeScriptRouterModule,
-        NativeScriptRouterModule.forChild(routerConfig)
     ],
     declarations: [
         ActionBarExamplesComponent,
         ActionItemsComponent,
         NavigationButtonComponent,
-        TitleComponent
-    ]
+        TitleComponent,
+    ],
 })
-
-export class ActionBarExamplesModule {
-    constructor() { }
-}
+export class ActionBarExamplesModule { }
