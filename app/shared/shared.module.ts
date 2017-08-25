@@ -5,7 +5,7 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 
 import { ListComponent } from "./list.component";
 import { ListNamePipe } from "./list-name.pipe";
-import { ExampleTitleDirective } from "./example.directive";
+import { ActionBarTitleDirective } from "./action-bar-title.directive";
 import { ToggleNavButtonDirective } from "./toggle-nav-button.directive";
 
 @NgModule({
@@ -13,7 +13,7 @@ import { ToggleNavButtonDirective } from "./toggle-nav-button.directive";
     declarations: [
         ListComponent,
         ListNamePipe,
-        ExampleTitleDirective,
+        ActionBarTitleDirective,
         ToggleNavButtonDirective,
     ],
     imports: [
@@ -25,7 +25,7 @@ import { ToggleNavButtonDirective } from "./toggle-nav-button.directive";
 
         ListComponent,
         ListNamePipe,
-        ExampleTitleDirective,
+        ActionBarTitleDirective,
         ToggleNavButtonDirective,
     ],
 })
