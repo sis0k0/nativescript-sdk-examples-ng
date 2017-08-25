@@ -16,7 +16,6 @@ import { DatePickerExamplesModule } from "./ui-category/date-picker/date-picker-
 import { DialogsExamplesModule } from "./ui-category/dialogs/dialogs-examples.module";
 import { FormattedStringExamplesModule } from "./ui-category/formatted-string/formated-string-examples.module";
 
-
 @NgModule({
     schemas: [NO_ERRORS_SCHEMA],
     declarations: [
