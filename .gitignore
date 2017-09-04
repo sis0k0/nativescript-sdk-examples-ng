@@ -6,6 +6,7 @@ debugger
 dist
 report
 
+package-lock.json
 app/**/*.map
 app/**/*.js
 
