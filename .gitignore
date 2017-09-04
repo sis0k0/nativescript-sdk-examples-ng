@@ -4,7 +4,6 @@ node_modules
 lib
 debugger
 dist
-report
 
 package-lock.json
 app/**/*.map
