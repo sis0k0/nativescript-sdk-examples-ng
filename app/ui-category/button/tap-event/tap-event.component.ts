@@ -1,21 +1,31 @@
 import { Component } from "@angular/core";
-import { EventData } from "data/observable";
-import { Button } from "ui/button";
 
 @Component({
     moduleId: module.id,
     templateUrl: "./tap-event.component.html"
 })
 export class ButtonTapEventComponent {
-
     public counter: number = 0;
+    private titleBackground: string;
+    private oddColor: string;
+    private evenColor: string;
 
-    // >> button-tap-event-code
-    onTap(args: EventData) {
-        let button = <Button>args.object;
+    constructor() {
+        this.oddColor = "red";
+        this.evenColor = "blue";
 
-        this.counter++;
-        alert("Tapped " + this.counter + " times!");
+        this.titleBackground = this.evenColor;
     }
-    // << button-tap-event-code
+
+    onTap() {
+        this.counter += 1;
+        this.updateTitleBackground();
+    }
+    
+    private updateTitleBackground() {
+        this.titleBackground = this.counter % 2 === 0 ?
+            this.evenColor :
+            this.oddColor;
+    }
 }
+

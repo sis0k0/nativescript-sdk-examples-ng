@@ -1,5 +1,8 @@
 <StackLayout class="m-15" sdkActionBarTitle sdkToggleNavButton>
-    <!-- >> button-tap-event-html -->
-    <Button class="btn btn-primary btn-active" id="button" text="Tap me!" (tap)="onTap($event)"></Button>
-    <!-- << button-tap-event-html -->
+    <Label
+        class="h1 text-center"
+        text="Le Heading!"
+        [color]="titleBackground"
+    ></Label>
+    <Button text="Change text color" (tap)="onTap($event)"></Button>
 </StackLayout>
