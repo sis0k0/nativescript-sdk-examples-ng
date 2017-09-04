@@ -1,7 +1,7 @@
-<ListView [items]="links" class="list-group"
+<RadListView [items]="links" class="list-group"
     sdkActionBarTitle sdkToggleNavButton>
 
-    <ng-template let-item="item">
+    <ng-template tkListItemTemplate let-item="item">
         <Label
             [text]="item | sdkListName"
             [nsRouterLink]="item"
@@ -9,5 +9,4 @@
         ></Label>
     </ng-template>
 
-</ListView>
-
+</RadListView>

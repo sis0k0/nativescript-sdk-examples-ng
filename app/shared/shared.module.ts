@@ -2,6 +2,7 @@ import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 
 import { NativeScriptCommonModule } from "nativescript-angular/common";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
+import { NativeScriptUIListViewModule } from "nativescript-telerik-ui/listview/angular";
 
 import { ListComponent } from "./list.component";
 import { ListNamePipe } from "./list-name.pipe";
@@ -19,6 +20,7 @@ import { ToggleNavButtonDirective } from "./toggle-nav-button.directive";
     imports: [
         NativeScriptRouterModule,
         NativeScriptCommonModule,
+        NativeScriptUIListViewModule,
     ],
     exports: [
         NativeScriptCommonModule,
