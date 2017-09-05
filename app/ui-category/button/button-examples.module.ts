@@ -1,5 +1,6 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import { NativeScriptRouterModule } from "nativescript-angular/router";
 
 import { SharedModule } from "../../shared/shared.module";
 import { ButtonExamplesComponent } from "./button-examples.component";
@@ -22,6 +23,7 @@ export const routes = [
     imports: [
         NativeScriptFormsModule,
         SharedModule,
+        NativeScriptRouterModule.forChild(routes),
     ],
     declarations: [
         ButtonExamplesComponent,

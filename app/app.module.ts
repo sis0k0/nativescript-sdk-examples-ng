@@ -28,15 +28,6 @@ import { FormattedStringExamplesModule } from "./ui-category/formatted-string/fo
         NativeScriptFormsModule,
         NativeScriptRouterModule,
         NativeScriptRouterModule.forRoot(routes),
-
-        ExamplesListModule,
-        ActionBarExamplesModule,
-        ActivityIndicatorExamplesModule,
-        AnimationsExamplesModule,
-        ButtonExamplesModule,
-        DatePickerExamplesModule,
-        DialogsExamplesModule,
-        FormattedStringExamplesModule,
     ],
     providers: [
         { provide: NgModuleFactoryLoader, useClass: NSModuleFactoryLoader }

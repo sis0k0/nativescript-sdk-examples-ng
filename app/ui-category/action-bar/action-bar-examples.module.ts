@@ -1,5 +1,6 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
-import { NativeScriptCommonModule } from "nativescript-angular/common";
+import { NativeScriptRouterModule } from "nativescript-angular/router";
+
 import { ActionBarExamplesComponent } from "./action-bar-examples.component";
 import { ActionItemsComponent } from "./action-items/action-items.component";
 import { NavigationButtonComponent } from "./navigation-button/navigation-button.component";
@@ -32,6 +33,7 @@ export const routes = [
     schemas: [NO_ERRORS_SCHEMA],
     imports: [
         SharedModule,
+        NativeScriptRouterModule.forChild(routes),
     ],
     declarations: [
         ActionBarExamplesComponent,

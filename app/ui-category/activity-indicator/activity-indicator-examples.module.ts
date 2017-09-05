@@ -1,4 +1,5 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
+import { NativeScriptRouterModule } from "nativescript-angular/router";
 
 import { SharedModule } from "../../shared/shared.module";
 import { ActivityIndicatorExamplesComponent } from "./activity-indicator-examples.component";
@@ -12,7 +13,7 @@ export const routes = [
     {
         path: "setting-busy",
         component: SettingBusyComponent,
-        data: { title: "Set busy property" }
+        data: { title: "Set busy property" },
     },
 ];
 
@@ -20,6 +21,7 @@ export const routes = [
     schemas: [NO_ERRORS_SCHEMA],
     imports: [
         SharedModule,
+        NativeScriptRouterModule.forChild(routes),
     ],
     declarations: [
         ActivityIndicatorExamplesComponent,

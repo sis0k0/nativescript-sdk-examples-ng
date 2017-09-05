@@ -1,4 +1,5 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
+import { NativeScriptRouterModule } from "nativescript-angular/router";
 
 import { SharedModule } from "../../shared/shared.module";
 import { DialogsExamplesComponent } from "./dialogs-examples.component";
@@ -44,6 +45,7 @@ export const routes = [
     schemas: [NO_ERRORS_SCHEMA],
     imports: [
         SharedModule,
+        NativeScriptRouterModule.forChild(routes),
     ],
     declarations: [
         DialogsExamplesComponent,
