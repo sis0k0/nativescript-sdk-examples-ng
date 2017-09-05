@@ -6,7 +6,7 @@ import { Component } from "@angular/core";
 })
 export class ButtonTapEventComponent {
     public counter: number = 0;
-    private titleBackground: string;
+    public titleBackground: string;
     private oddColor: string;
     private evenColor: string;
 
