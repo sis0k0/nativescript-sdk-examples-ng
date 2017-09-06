@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Profiling</title>
+<style>
+* {
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+.trace {
+    position: absolute;
+    border: 1px solid black;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    background-color: #DDD;
+    cursor: default;
+    line-height: 20px;
+    height: 20px;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.trace.Modules {
+    background-color: #BFF;
+}
+.trace.Runtime {
+    background-color: #FFB;
+}
+.trace:hover {
+    background-color: #FFF;
+    border-color: orange;
+    z-index: 1;
+    box-shadow: 0px 1px 5px black;
+}
+</style>
+</head>
+<body>
+  <script>
+var timeline = [{"domain":"Runtime","name":"Extracting assets","from":1504646378240,"to":1504646378456},{"domain":"Runtime","name":"Runtime.init","from":1504646378464,"to":1504646378532},{"domain":"Runtime","name":"Materizlizing class: android/app/Activity","from":1504646378564.432,"to":1504646378592.529},{"domain":"Runtime","name":"LoadModule /data/data/org.nativescript.nativescriptsdkexamplesng/files/app/tns-java-classes.js","from":1504646378557.453,"to":1504646378609.672},{"domain":"Runtime","name":"RequireCallback /data/data/org.nativescript.nativescriptsdkexamplesng/files/app/tns-java-classes.js","from":1504646378557.028,"to":1504646378609.749},{"domain":"Runtime","name":"void tns::ModuleInternal::Load(const string &)","from":1504646378553.899,"to":1504646378609.788},{"domain":"Runtime","name":"RuntimeHelper.initRuntime","from":1504646378211,"to":1504646378609},{"domain":"Modules","name":"r.createNavigationEntry [object Object]","from":1504646378645,"to":1504646378645},{"domain":"Modules","name":"r.bootstrapApp [object Object]","from":1504646378645,"to":1504646378674},{"domain":"Modules","name":"r.bootstrapModuleFactory [object Object]","from":1504646378645,"to":1504646378674},{"domain":"Runtime","name":"LoadModule /data/data/org.nativescript.nativescriptsdkexamplesng/files/app/bundle.js","from":1504646378613.15,"to":1504646378675.097},{"domain":"Runtime","name":"RequireCallback ./bundle","from":1504646378612.871,"to":1504646378675.149},{"domain":"Runtime","name":"LoadModule /data/data/org.nativescript.nativescriptsdkexamplesng/files/app/starter.js","from":1504646378611.761,"to":1504646378675.181},{"domain":"Runtime","name":"RequireCallback /data/data/org.nativescript.nativescriptsdkexamplesng/files/app/./starter.js","from":1504646378611.385,"to":1504646378675.217},{"domain":"Runtime","name":"void tns::ModuleInternal::Load(const string &)","from":1504646378611.255,"to":1504646378675.246},{"domain":"Runtime","name":"Runtime.run","from":1504646378610,"to":1504646378675},{"domain":"Runtime","name":"NaitveScriptApplication.onCreate","from":1504646378210,"to":1504646378675},{"domain":"Runtime","name":"Materizlizing class: android/content/Intent","from":1504646378681.66,"to":1504646378736.292},{"domain":"Modules","name":"t.readTextSync [object Object]","from":1504646378748,"to":1504646378754},{"domain":"Modules","name":"\"style-scope\".loadCss [object Object]","from":1504646378737,"to":1504646378998},{"domain":"Modules","name":"\"style-scope\".loadCssOnLaunch [object Object]","from":1504646378736,"to":1504646378999},{"domain":"Modules","name":"e.notifyLaunch [object Object]","from":1504646378736,"to":1504646379000},{"domain":"Runtime","name":"Materizlizing class: android/content/pm/PackageManager","from":1504646379015.011,"to":1504646379034.83},{"domain":"Runtime","name":"Materizlizing class: android/app/ApplicationPackageManager","from":1504646379014.934,"to":1504646379041.486},{"domain":"Modules","name":"setThemeOnLaunch [object Object]","from":1504646379003,"to":1504646379069},{"domain":"Modules","name":"notifyActivityCreated [object Object]","from":1504646379069,"to":1504646379069},{"domain":"Modules","name":"onActivityCreated com.tns.gen.android.app.Application_ActivityLifecycleCallbacks@2f59b5fb","from":1504646379003,"to":1504646379070},{"domain":"Runtime","name":"Materizlizing class: android/view/View","from":1504646379084.12,"to":1504646379150.04},{"domain":"Runtime","name":"Materizlizing class: android/view/ViewGroup","from":1504646379084.084,"to":1504646379161.345},{"domain":"Runtime","name":"Materizlizing class: org/nativescript/widgets/LayoutBase","from":1504646379084.041,"to":1504646379161.768},{"domain":"Runtime","name":"Materizlizing class: org/nativescript/widgets/ContentLayout","from":1504646379078.611,"to":1504646379162.009},{"domain":"Modules","name":"t._setupUI t(1)","from":1504646379070,"to":1504646379176},{"domain":"Modules","name":"e._createSelectors [object Object]","from":1504646379189,"to":1504646379207},{"domain":"Modules","name":"t.applyCssState ActionBar(3)","from":1504646379216,"to":1504646379217},{"domain":"Modules","name":"t._setCssState ActionBar(3)","from":1504646379215,"to":1504646379218},{"domain":"Modules","name":"t._applyStyleFromScope ActionBar(3)","from":1504646379212,"to":1504646379218},{"domain":"Modules","name":"t._setStyleScope ActionBar(3)","from":1504646379212,"to":1504646379218},{"domain":"Modules","name":"t._addView Page(2)","from":1504646379211,"to":1504646379220},{"domain":"Modules","name":"t.applyCssState Page(2)","from":1504646379223,"to":1504646379224},{"domain":"Modules","name":"t._setCssState Page(2)","from":1504646379222,"to":1504646379224},{"domain":"Modules","name":"t.applyCssState ActionBar(3)","from":1504646379225,"to":1504646379225},{"domain":"Modules","name":"t._setCssState ActionBar(3)","from":1504646379224,"to":1504646379225},{"domain":"Modules","name":"entry.create [object Object]","from":1504646379185,"to":1504646379225},{"domain":"Modules","name":"resolvePageFromEntry [object Object]","from":1504646379185,"to":1504646379225},{"domain":"Modules","name":"e.onCreate [object Object]","from":1504646378681,"to":1504646379227},{"domain":"Modules","name":"initImageCache [object Object]","from":1504646379229,"to":1504646379242},{"domain":"Modules","name":"onActivityStarted com.tns.gen.android.app.Application_ActivityLifecycleCallbacks@2f59b5fb","from":1504646379229,"to":1504646379242},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":1504646379244,"to":1504646379245},{"domain":"Modules","name":"t.onLoaded t(1)","from":1504646379243,"to":1504646379245},{"domain":"Modules","name":"View.onLoaded t(1)","from":1504646379242,"to":1504646379247},{"domain":"Modules","name":"e.onStart [object Object]","from":1504646379228,"to":1504646379248},{"domain":"Runtime","name":"MarkReachableObjects: com.tns.gen.android.content.ComponentCallbacks2","from":1504646379274.574,"to":1504646379781.807},{"domain":"Modules","name":"nativescript-angular/platform-common.initHandler [object Object]","from":1504646379250,"to":1504646379855},{"domain":"Modules","name":"t.onNavigatingTo Page(2)","from":1504646379250,"to":1504646379855},{"domain":"Modules","name":"t._navigateCore t(1)","from":1504646379855,"to":1504646379913},{"domain":"Modules","name":"r.performNavigation t(1)","from":1504646379249,"to":1504646379913},{"domain":"Modules","name":"onActivityResumed com.tns.gen.android.app.Application_ActivityLifecycleCallbacks@2f59b5fb","from":1504646379248,"to":1504646379914},{"domain":"Modules","name":"t.selectRootElement [object Object]","from":1504646379935,"to":1504646379935},{"domain":"Modules","name":"t.createElement [object Object]","from":1504646379942,"to":1504646379943},{"domain":"Modules","name":"t.applyCssState t(4)","from":1504646379948,"to":1504646379948},{"domain":"Modules","name":"t._setCssState t(4)","from":1504646379947,"to":1504646379948},{"domain":"Modules","name":"t._applyStyleFromScope t(4)","from":1504646379947,"to":1504646379949},{"domain":"Modules","name":"t._setStyleScope t(4)","from":1504646379947,"to":1504646379949},{"domain":"Modules","name":"t._addView Page(2)","from":1504646379947,"to":1504646379950},{"domain":"Modules","name":"t.appendChild [object Object]","from":1504646379945,"to":1504646379950},{"domain":"Modules","name":"t.setAttribute [object Object]","from":1504646379955,"to":1504646379961},{"domain":"Modules","name":"nativescript-angular/platform-common.postBootstrapAction [object Object]","from":1504646380012,"to":1504646380012},{"domain":"Modules","name":"t.createElement [object Object]","from":1504646380054,"to":1504646380055},{"domain":"Modules","name":"t.applyCssState t(0)","from":1504646380059,"to":1504646380059},{"domain":"Modules","name":"t._setCssState t(0)","from":1504646380059,"to":1504646380059},{"domain":"Modules","name":"t._applyStyleFromScope t(0)","from":1504646380059,"to":1504646380060},{"domain":"Modules","name":"t.createText [object Object]","from":1504646380057,"to":1504646380060},{"domain":"Modules","name":"t.appendChild [object Object]","from":1504646380060,"to":1504646380061},{"domain":"Modules","name":"t.createElement [object Object]","from":1504646380061,"to":1504646380061},{"domain":"Modules","name":"t._addView t(5)","from":1504646380062,"to":1504646380063},{"domain":"Modules","name":"t.appendChild [object Object]","from":1504646380061,"to":1504646380063},{"domain":"Modules","name":"t.applyCssState t(1)","from":1504646380069,"to":1504646380069},{"domain":"Modules","name":"t._setCssState t(1)","from":1504646380069,"to":1504646380069},{"domain":"Modules","name":"t._applyStyleFromScope t(1)","from":1504646380069,"to":1504646380069},{"domain":"Modules","name":"t.createText [object Object]","from":1504646380069,"to":1504646380070},{"domain":"Modules","name":"t.appendChild [object Object]","from":1504646380070,"to":1504646380071},{"domain":"Modules","name":"t.createElement [object Object]","from":1504646380071,"to":1504646380079},{"domain":"Modules","name":"t._addView t(7)","from":1504646380081,"to":1504646380081},{"domain":"Modules","name":"t.appendChild [object Object]","from":1504646380080,"to":1504646380082},{"domain":"Modules","name":"t.applyCssState t(9)","from":1504646380084,"to":1504646380084},{"domain":"Modules","name":"t._setCssState t(9)","from":1504646380084,"to":1504646380085},{"domain":"Modules","name":"t._applyStyleFromScope t(9)","from":1504646380084,"to":1504646380085},{"domain":"Modules","name":"t.setAttribute [object Object]","from":1504646380082,"to":1504646380085},{"domain":"Modules","name":"t.setAttribute [object Object]","from":1504646380086,"to":1504646380093},{"domain":"Modules","name":"t.setAttribute [object Object]","from":1504646380093,"to":1504646380093},{"domain":"Modules","name":"t.listen [object Object]","from":1504646380095,"to":1504646380096},{"domain":"Modules","name":"t.applyCssState t(13)","from":1504646380105,"to":1504646380106},{"domain":"Modules","name":"t._setCssState t(13)","from":1504646380105,"to":1504646380106},{"domain":"Modules","name":"t._applyStyleFromScope t(13)","from":1504646380105,"to":1504646380106},{"domain":"Modules","name":"t._setStyleScope t(13)","from":1504646380105,"to":1504646380106},{"domain":"Modules","name":"t._addView ActionBar(3)","from":1504646380105,"to":1504646380107},{"domain":"Modules","name":"t.applyCssState t(2)","from":1504646380108,"to":1504646380108},{"domain":"Modules","name":"t._setCssState t(2)","from":1504646380107,"to":1504646380108},{"domain":"Modules","name":"t._applyStyleFromScope t(2)","from":1504646380107,"to":1504646380108},{"domain":"Modules","name":"t.createText [object Object]","from":1504646380107,"to":1504646380108},{"domain":"Modules","name":"t.applyCssState t(0)","from":1504646380110,"to":1504646380110},{"domain":"Modules","name":"t._setCssState t(0)","from":1504646380110,"to":1504646380110},{"domain":"Modules","name":"t._applyStyleFromScope t(0)","from":1504646380110,"to":1504646380111},{"domain":"Modules","name":"t.createComment [object Object]","from":1504646380108,"to":1504646380111},{"domain":"Modules","name":"t.applyCssState t(3)","from":1504646380113,"to":1504646380113},{"domain":"Modules","name":"t._setCssState t(3)","from":1504646380113,"to":1504646380113},{"domain":"Modules","name":"t._applyStyleFromScope t(3)","from":1504646380113,"to":1504646380113},{"domain":"Modules","name":"t.createText [object Object]","from":1504646380112,"to":1504646380113},{"domain":"Modules","name":"t.applyCssState t(4)","from":1504646380113,"to":1504646380113},{"domain":"Modules","name":"t._setCssState t(4)","from":1504646380113,"to":1504646380113},{"domain":"Modules","name":"t._applyStyleFromScope t(4)","from":1504646380113,"to":1504646380113},{"domain":"Modules","name":"t.createText [object Object]","from":1504646380113,"to":1504646380113},{"domain":"Modules","name":"t.appendChild [object Object]","from":1504646380114,"to":1504646380114},{"domain":"Modules","name":"t.applyCssState t(5)","from":1504646380114,"to":1504646380114},{"domain":"Modules","name":"t._setCssState t(5)","from":1504646380114,"to":1504646380114},{"domain":"Modules","name":"t._applyStyleFromScope t(5)","from":1504646380114,"to":1504646380114},{"domain":"Modules","name":"t.createText [object Object]","from":1504646380114,"to":1504646380115},{"domain":"Modules","name":"t.appendChild [object Object]","from":1504646380115,"to":1504646380115},{"domain":"Modules","name":"t.createElement [object Object]","from":1504646380115,"to":1504646380115},{"domain":"Modules","name":"t.appendChild [object Object]","from":1504646380115,"to":1504646380115},{"domain":"Modules","name":"t.applyCssState t(6)","from":1504646380116,"to":1504646380116},{"domain":"Modules","name":"t._setCssState t(6)","from":1504646380116,"to":1504646380116},{"domain":"Modules","name":"t._applyStyleFromScope t(6)","from":1504646380116,"to":1504646380116},{"domain":"Modules","name":"t.createText [object Object]","from":1504646380116,"to":1504646380116},{"domain":"Modules","name":"t.appendChild [object Object]","from":1504646380116,"to":1504646380116},{"domain":"Modules","name":"t.createElement [object Object]","from":1504646380116,"to":1504646380118},{"domain":"Modules","name":"t._addView t(19)","from":1504646380120,"to":1504646380120},{"domain":"Modules","name":"t.appendChild [object Object]","from":1504646380119,"to":1504646380121},{"domain":"Modules","name":"t.applyCssState t(7)","from":1504646380122,"to":1504646380122},{"domain":"Modules","name":"t._setCssState t(7)","from":1504646380122,"to":1504646380122},{"domain":"Modules","name":"t._applyStyleFromScope t(7)","from":1504646380122,"to":1504646380122},{"domain":"Modules","name":"t.createText [object Object]","from":1504646380121,"to":1504646380122},{"domain":"Modules","name":"t.appendChild [object Object]","from":1504646380124,"to":1504646380124},{"domain":"Modules","name":"t.parentNode [object Object]","from":1504646380129,"to":1504646380131},{"domain":"Modules","name":"t.nextSibling [object Object]","from":1504646380131,"to":1504646380132},{"domain":"Modules","name":"t.applyCssState t(4)","from":1504646380136,"to":1504646380136},{"domain":"Modules","name":"t._setCssState t(4)","from":1504646380136,"to":1504646380136},{"domain":"Modules","name":"t._applyStyleFromScope t(4)","from":1504646380136,"to":1504646380136},{"domain":"Modules","name":"t._setStyleScope t(4)","from":1504646380136,"to":1504646380136},{"domain":"Modules","name":"t.applyCssState t(5)","from":1504646380138,"to":1504646380139},{"domain":"Modules","name":"t._setCssState t(5)","from":1504646380138,"to":1504646380139},{"domain":"Modules","name":"t._applyStyleFromScope t(5)","from":1504646380138,"to":1504646380139},{"domain":"Modules","name":"t.applyCssState t(7)","from":1504646380140,"to":1504646380140},{"domain":"Modules","name":"t._setCssState t(7)","from":1504646380140,"to":1504646380140},{"domain":"Modules","name":"t._applyStyleFromScope t(7)","from":1504646380139,"to":1504646380140},{"domain":"Modules","name":"t.applyCssState t(9)","from":1504646380141,"to":1504646380142},{"domain":"Modules","name":"t._setCssState t(9)","from":1504646380141,"to":1504646380142},{"domain":"Modules","name":"t._applyStyleFromScope t(9)","from":1504646380141,"to":1504646380142},{"domain":"Modules","name":"t._setStyleScope t(9)","from":1504646380141,"to":1504646380143},{"domain":"Modules","name":"t._setStyleScope t(7)","from":1504646380139,"to":1504646380143},{"domain":"Modules","name":"t._setStyleScope t(5)","from":1504646380138,"to":1504646380143},{"domain":"Modules","name":"t._addView Page(2)","from":1504646380137,"to":1504646380143},{"domain":"Modules","name":"t.insertBefore [object Object]","from":1504646380134,"to":1504646380144},{"domain":"Modules","name":"e.activateWith [object Object]","from":1504646380051,"to":1504646380145},{"domain":"Modules","name":"t.setAttribute [object Object]","from":1504646380152,"to":1504646380153},{"domain":"Modules","name":"t.setAttribute [object Object]","from":1504646380160,"to":1504646380160},{"domain":"Modules","name":"e.onCreate [object Object]","from":1504646380165,"to":1504646380165},{"domain":"Runtime","name":"Materizlizing class: android/support/v7/widget/RecyclerView","from":1504646380208.611,"to":1504646380240.796},{"domain":"Runtime","name":"Materizlizing class: com/telerik/widget/list/RadListView","from":1504646380182.551,"to":1504646380243.451},{"domain":"Modules","name":"t._setupUI t(9)","from":1504646380181,"to":1504646380357},{"domain":"Modules","name":"t._setupUI t(7)","from":1504646380179,"to":1504646380357},{"domain":"Modules","name":"t._setupUI t(5)","from":1504646380178,"to":1504646380357},{"domain":"Runtime","name":"Materizlizing class: android/support/v7/widget/AppCompatTextView","from":1504646380358.579,"to":1504646380375.76},{"domain":"Modules","name":"t._setupUI t(13)","from":1504646380408,"to":1504646380409},{"domain":"Modules","name":"t._setupUI ActionBar(3)","from":1504646380357,"to":1504646380409},{"domain":"Modules","name":"t._setupUI Page(2)","from":1504646380168,"to":1504646380409},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":1504646380410,"to":1504646380410},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":1504646380411,"to":1504646380412},{"domain":"Modules","name":"t.onLoaded t(9)","from":1504646380411,"to":1504646380412},{"domain":"Modules","name":"View.onLoaded t(9)","from":1504646380411,"to":1504646380412},{"domain":"Modules","name":"t.onLoaded t(7)","from":1504646380410,"to":1504646380413},{"domain":"Modules","name":"View.onLoaded t(7)","from":1504646380410,"to":1504646380413},{"domain":"Modules","name":"t.onLoaded t(5)","from":1504646380410,"to":1504646380413},{"domain":"Modules","name":"View.onLoaded t(5)","from":1504646380410,"to":1504646380413},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":1504646380413,"to":1504646380416},{"domain":"Modules","name":"t.onLoaded t(13)","from":1504646380417,"to":1504646380417},{"domain":"Modules","name":"t.onLoaded t(13)","from":1504646380416,"to":1504646380417},{"domain":"Modules","name":"t.onLoaded ActionBar(3)","from":1504646380413,"to":1504646380417},{"domain":"Modules","name":"View.onLoaded ActionBar(3)","from":1504646380413,"to":1504646380417},{"domain":"Modules","name":"t.onLoaded Page(2)","from":1504646380410,"to":1504646380451},{"domain":"Modules","name":"View.onLoaded Page(2)","from":1504646380410,"to":1504646380451},{"domain":"Modules","name":"t.onLoaded Page(2)","from":1504646380409,"to":1504646380452},{"domain":"Modules","name":"Page.onLoaded Page(2)","from":1504646380409,"to":1504646380452},{"domain":"Modules","name":"t._addView t(1)","from":1504646380168,"to":1504646380452},{"domain":"Modules","name":"e.onCreateView [object Object]","from":1504646380168,"to":1504646380452},{"domain":"Modules","name":"e.onCreateAnimator [object Object]","from":1504646380453,"to":1504646380453},{"domain":"Modules","name":"t.applyCssState t(8)","from":1504646380526,"to":1504646380526},{"domain":"Modules","name":"t._setCssState t(8)","from":1504646380526,"to":1504646380526},{"domain":"Modules","name":"t._applyStyleFromScope t(8)","from":1504646380526,"to":1504646380527},{"domain":"Modules","name":"t.createText [object Object]","from":1504646380526,"to":1504646380527},{"domain":"Modules","name":"t.createElement [object Object]","from":1504646380527,"to":1504646380527},{"domain":"Modules","name":"t.applyCssState Label(24)","from":1504646380529,"to":1504646380529},{"domain":"Modules","name":"t._setCssState Label(24)","from":1504646380529,"to":1504646380529},{"domain":"Modules","name":"t._applyStyleFromScope Label(24)","from":1504646380529,"to":1504646380530},{"domain":"Modules","name":"t.setAttribute [object Object]","from":1504646380527,"to":1504646380530},{"domain":"Modules","name":"t.listen [object Object]","from":1504646380531,"to":1504646380533},{"domain":"Modules","name":"t.applyCssState t(9)","from":1504646380534,"to":1504646380534},{"domain":"Modules","name":"t._setCssState t(9)","from":1504646380534,"to":1504646380534},{"domain":"Modules","name":"t._applyStyleFromScope t(9)","from":1504646380534,"to":1504646380534},{"domain":"Modules","name":"t.createText [object Object]","from":1504646380534,"to":1504646380535},{"domain":"Modules","name":"t.parentNode [object Object]","from":1504646380536,"to":1504646380539},{"domain":"Modules","name":"t.nextSibling [object Object]","from":1504646380539,"to":1504646380539},{"domain":"Modules","name":"t.insertBefore [object Object]","from":1504646380540,"to":1504646380540},{"domain":"Modules","name":"t._addView t(19)","from":1504646380541,"to":1504646380541},{"domain":"Modules","name":"t.insertBefore [object Object]","from":1504646380540,"to":1504646380541},{"domain":"Modules","name":"t.insertBefore [object Object]","from":1504646380541,"to":1504646380542},{"domain":"Modules","name":"t.applyCssState Label(24)","from":1504646380544,"to":1504646380544},{"domain":"Modules","name":"t._setCssState Label(24)","from":1504646380544,"to":1504646380545},{"domain":"Modules","name":"t._applyStyleFromScope Label(24)","from":1504646380544,"to":1504646380545},{"domain":"Modules","name":"t._setStyleScope Label(24)","from":1504646380544,"to":1504646380545},{"domain":"Modules","name":"t._addView StackLayout(26)","from":1504646380547,"to":1504646380547},{"domain":"Modules","name":"t.applyCssState StackLayout(26)","from":1504646380549,"to":1504646380549},{"domain":"Modules","name":"t._setCssState StackLayout(26)","from":1504646380549,"to":1504646380549},{"domain":"Modules","name":"t._applyStyleFromScope StackLayout(26)","from":1504646380548,"to":1504646380549},{"domain":"Modules","name":"t.applyCssState Label(24)","from":1504646380553,"to":1504646380565},{"domain":"Modules","name":"t._setCssState Label(24)","from":1504646380553,"to":1504646380566},{"domain":"Modules","name":"t._applyStyleFromScope Label(24)","from":1504646380550,"to":1504646380566},{"domain":"Modules","name":"t._setStyleScope Label(24)","from":1504646380550,"to":1504646380566},{"domain":"Modules","name":"t._setStyleScope StackLayout(26)","from":1504646380548,"to":1504646380566},{"domain":"Modules","name":"Label.createNativeView Label(24)","from":1504646380571,"to":1504646380572},{"domain":"Modules","name":"t._setupUI Label(24)","from":1504646380571,"to":1504646380581},{"domain":"Modules","name":"t._setupUI StackLayout(26)","from":1504646380566,"to":1504646380581},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":1504646380582,"to":1504646380582},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":1504646380583,"to":1504646380608},{"domain":"Modules","name":"t.onLoaded Label(24)","from":1504646380583,"to":1504646380628},{"domain":"Modules","name":"View.onLoaded Label(24)","from":1504646380582,"to":1504646380631},{"domain":"Modules","name":"t.onLoaded StackLayout(26)","from":1504646380582,"to":1504646380631},{"domain":"Modules","name":"View.onLoaded StackLayout(26)","from":1504646380582,"to":1504646380631},{"domain":"Modules","name":"t._addView t(9)","from":1504646380548,"to":1504646380631},{"domain":"Modules","name":"t.setAttribute [object Object]","from":1504646380643,"to":1504646380644},{"domain":"Modules","name":"t.setProperty [object Object]","from":1504646380648,"to":1504646380650},{"domain":"Modules","name":"t.applyCssState t(10)","from":1504646380654,"to":1504646380654},{"domain":"Modules","name":"t._setCssState t(10)","from":1504646380654,"to":1504646380654},{"domain":"Modules","name":"t._applyStyleFromScope t(10)","from":1504646380654,"to":1504646380654},{"domain":"Modules","name":"t.createText [object Object]","from":1504646380654,"to":1504646380654},{"domain":"Modules","name":"t.createElement [object Object]","from":1504646380654,"to":1504646380654},{"domain":"Modules","name":"t.applyCssState Label(28)","from":1504646380655,"to":1504646380655},{"domain":"Modules","name":"t._setCssState Label(28)","from":1504646380655,"to":1504646380655},{"domain":"Modules","name":"t._applyStyleFromScope Label(28)","from":1504646380655,"to":1504646380656},{"domain":"Modules","name":"t.setAttribute [object Object]","from":1504646380655,"to":1504646380656},{"domain":"Modules","name":"t.listen [object Object]","from":1504646380656,"to":1504646380656},{"domain":"Modules","name":"t.applyCssState t(11)","from":1504646380657,"to":1504646380657},{"domain":"Modules","name":"t._setCssState t(11)","from":1504646380657,"to":1504646380657},{"domain":"Modules","name":"t._applyStyleFromScope t(11)","from":1504646380657,"to":1504646380657},{"domain":"Modules","name":"t.createText [object Object]","from":1504646380657,"to":1504646380657},{"domain":"Modules","name":"t.parentNode [object Object]","from":1504646380658,"to":1504646380658},{"domain":"Modules","name":"t.nextSibling [object Object]","from":1504646380658,"to":1504646380658},{"domain":"Modules","name":"t.insertBefore [object Object]","from":1504646380658,"to":1504646380658},{"domain":"Modules","name":"t._addView t(19)","from":1504646380658,"to":1504646380658},{"domain":"Modules","name":"t.insertBefore [object Object]","from":1504646380658,"to":1504646380658},{"domain":"Modules","name":"t.insertBefore [object Object]","from":1504646380659,"to":1504646380659},{"domain":"Modules","name":"t.applyCssState Label(28)","from":1504646380659,"to":1504646380659},{"domain":"Modules","name":"t._setCssState Label(28)","from":1504646380659,"to":1504646380659},{"domain":"Modules","name":"t._applyStyleFromScope Label(28)","from":1504646380659,"to":1504646380659},{"domain":"Modules","name":"t._setStyleScope Label(28)","from":1504646380659,"to":1504646380659},{"domain":"Modules","name":"t._addView StackLayout(30)","from":1504646380660,"to":1504646380660},{"domain":"Modules","name":"t.applyCssState StackLayout(30)","from":1504646380661,"to":1504646380661},{"domain":"Modules","name":"t._setCssState StackLayout(30)","from":1504646380661,"to":1504646380661},{"domain":"Modules","name":"t._applyStyleFromScope StackLayout(30)","from":1504646380661,"to":1504646380661},{"domain":"Modules","name":"t.applyCssState Label(28)","from":1504646380662,"to":1504646380664},{"domain":"Modules","name":"t._setCssState Label(28)","from":1504646380662,"to":1504646380664},{"domain":"Modules","name":"t._applyStyleFromScope Label(28)","from":1504646380661,"to":1504646380664},{"domain":"Modules","name":"t._setStyleScope Label(28)","from":1504646380661,"to":1504646380664},{"domain":"Modules","name":"t._setStyleScope StackLayout(30)","from":1504646380661,"to":1504646380664},{"domain":"Modules","name":"Label.createNativeView Label(28)","from":1504646380666,"to":1504646380667},{"domain":"Modules","name":"t._setupUI Label(28)","from":1504646380666,"to":1504646380670},{"domain":"Modules","name":"t._setupUI StackLayout(30)","from":1504646380665,"to":1504646380670},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":1504646380670,"to":1504646380671},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":1504646380671,"to":1504646380674},{"domain":"Modules","name":"t.onLoaded Label(28)","from":1504646380671,"to":1504646380676},{"domain":"Modules","name":"View.onLoaded Label(28)","from":1504646380671,"to":1504646380677},{"domain":"Modules","name":"t.onLoaded StackLayout(30)","from":1504646380670,"to":1504646380677},{"domain":"Modules","name":"View.onLoaded StackLayout(30)","from":1504646380670,"to":1504646380677},{"domain":"Modules","name":"t._addView t(9)","from":1504646380661,"to":1504646380677},{"domain":"Modules","name":"t.setAttribute [object Object]","from":1504646380681,"to":1504646380681},{"domain":"Modules","name":"t.setProperty [object Object]","from":1504646380681,"to":1504646380682},{"domain":"Modules","name":"t.applyCssState t(12)","from":1504646380684,"to":1504646380684},{"domain":"Modules","name":"t._setCssState t(12)","from":1504646380684,"to":1504646380684},{"domain":"Modules","name":"t._applyStyleFromScope t(12)","from":1504646380684,"to":1504646380684},{"domain":"Modules","name":"t.createText [object Object]","from":1504646380684,"to":1504646380684},{"domain":"Modules","name":"t.createElement [object Object]","from":1504646380685,"to":1504646380685},{"domain":"Modules","name":"t.applyCssState Label(32)","from":1504646380686,"to":1504646380686},{"domain":"Modules","name":"t._setCssState Label(32)","from":1504646380686,"to":1504646380686},{"domain":"Modules","name":"t._applyStyleFromScope Label(32)","from":1504646380686,"to":1504646380686},{"domain":"Modules","name":"t.setAttribute [object Object]","from":1504646380685,"to":1504646380686},{"domain":"Modules","name":"t.listen [object Object]","from":1504646380686,"to":1504646380687},{"domain":"Modules","name":"t.applyCssState t(13)","from":1504646380687,"to":1504646380687},{"domain":"Modules","name":"t._setCssState t(13)","from":1504646380687,"to":1504646380687},{"domain":"Modules","name":"t._applyStyleFromScope t(13)","from":1504646380687,"to":1504646380687},{"domain":"Modules","name":"t.createText [object Object]","from":1504646380687,"to":1504646380687},{"domain":"Modules","name":"t.parentNode [object Object]","from":1504646380687,"to":1504646380687},{"domain":"Modules","name":"t.nextSibling [object Object]","from":1504646380688,"to":1504646380688},{"domain":"Modules","name":"t.insertBefore [object Object]","from":1504646380688,"to":1504646380688},{"domain":"Modules","name":"t._addView t(19)","from":1504646380688,"to":1504646380688},{"domain":"Modules","name":"t.insertBefore [object Object]","from":1504646380688,"to":1504646380688},{"domain":"Modules","name":"t.insertBefore [object Object]","from":1504646380688,"to":1504646380688},{"domain":"Modules","name":"t.applyCssState Label(32)","from":1504646380688,"to":1504646380688},{"domain":"Modules","name":"t._setCssState Label(32)","from":1504646380688,"to":1504646380689},{"domain":"Modules","name":"t._applyStyleFromScope Label(32)","from":1504646380688,"to":1504646380689},{"domain":"Modules","name":"t._setStyleScope Label(32)","from":1504646380688,"to":1504646380689},{"domain":"Modules","name":"t._addView StackLayout(34)","from":1504646380689,"to":1504646380689},{"domain":"Modules","name":"t.applyCssState StackLayout(34)","from":1504646380689,"to":1504646380690},{"domain":"Modules","name":"t._setCssState StackLayout(34)","from":1504646380689,"to":1504646380690},{"domain":"Modules","name":"t._applyStyleFromScope StackLayout(34)","from":1504646380689,"to":1504646380690},{"domain":"Modules","name":"t.applyCssState Label(32)","from":1504646380690,"to":1504646380691},{"domain":"Modules","name":"t._setCssState Label(32)","from":1504646380690,"to":1504646380691},{"domain":"Modules","name":"t._applyStyleFromScope Label(32)","from":1504646380690,"to":1504646380691},{"domain":"Modules","name":"t._setStyleScope Label(32)","from":1504646380690,"to":1504646380691},{"domain":"Modules","name":"t._setStyleScope StackLayout(34)","from":1504646380689,"to":1504646380691},{"domain":"Modules","name":"Label.createNativeView Label(32)","from":1504646380692,"to":1504646380692},{"domain":"Modules","name":"t._setupUI Label(32)","from":1504646380692,"to":1504646380693},{"domain":"Modules","name":"t._setupUI StackLayout(34)","from":1504646380691,"to":1504646380693},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":1504646380693,"to":1504646380693},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":1504646380693,"to":1504646380694},{"domain":"Modules","name":"t.onLoaded Label(32)","from":1504646380693,"to":1504646380696},{"domain":"Modules","name":"View.onLoaded Label(32)","from":1504646380693,"to":1504646380696},{"domain":"Modules","name":"t.onLoaded StackLayout(34)","from":1504646380693,"to":1504646380696},{"domain":"Modules","name":"View.onLoaded StackLayout(34)","from":1504646380693,"to":1504646380696},{"domain":"Modules","name":"t._addView t(9)","from":1504646380689,"to":1504646380697},{"domain":"Modules","name":"t.setAttribute [object Object]","from":1504646380698,"to":1504646380698},{"domain":"Modules","name":"t.setProperty [object Object]","from":1504646380698,"to":1504646380698},{"domain":"Modules","name":"t.applyCssState t(14)","from":1504646380700,"to":1504646380700},{"domain":"Modules","name":"t._setCssState t(14)","from":1504646380700,"to":1504646380700},{"domain":"Modules","name":"t._applyStyleFromScope t(14)","from":1504646380700,"to":1504646380700},{"domain":"Modules","name":"t.createText [object Object]","from":1504646380700,"to":1504646380700},{"domain":"Modules","name":"t.createElement [object Object]","from":1504646380701,"to":1504646380701},{"domain":"Modules","name":"t.applyCssState Label(36)","from":1504646380701,"to":1504646380701},{"domain":"Modules","name":"t._setCssState Label(36)","from":1504646380701,"to":1504646380701},{"domain":"Modules","name":"t._applyStyleFromScope Label(36)","from":1504646380701,"to":1504646380701},{"domain":"Modules","name":"t.setAttribute [object Object]","from":1504646380701,"to":1504646380701},{"domain":"Modules","name":"t.listen [object Object]","from":1504646380701,"to":1504646380702},{"domain":"Modules","name":"t.applyCssState t(15)","from":1504646380703,"to":1504646380703},{"domain":"Modules","name":"t._setCssState t(15)","from":1504646380703,"to":1504646380703},{"domain":"Modules","name":"t._applyStyleFromScope t(15)","from":1504646380703,"to":1504646380703},{"domain":"Modules","name":"t.createText [object Object]","from":1504646380703,"to":1504646380703},{"domain":"Modules","name":"t.parentNode [object Object]","from":1504646380703,"to":1504646380703},{"domain":"Modules","name":"t.nextSibling [object Object]","from":1504646380703,"to":1504646380703},{"domain":"Modules","name":"t.insertBefore [object Object]","from":1504646380704,"to":1504646380704},{"domain":"Modules","name":"t._addView t(19)","from":1504646380704,"to":1504646380704},{"domain":"Modules","name":"t.insertBefore [object Object]","from":1504646380704,"to":1504646380704},{"domain":"Modules","name":"t.insertBefore [object Object]","from":1504646380704,"to":1504646380704},{"domain":"Modules","name":"t.applyCssState Label(36)","from":1504646380704,"to":1504646380704},{"domain":"Modules","name":"t._setCssState Label(36)","from":1504646380704,"to":1504646380704},{"domain":"Modules","name":"t._applyStyleFromScope Label(36)","from":1504646380704,"to":1504646380705},{"domain":"Modules","name":"t._setStyleScope Label(36)","from":1504646380704,"to":1504646380705},{"domain":"Modules","name":"t._addView StackLayout(38)","from":1504646380705,"to":1504646380705},{"domain":"Modules","name":"t.applyCssState StackLayout(38)","from":1504646380705,"to":1504646380705},{"domain":"Modules","name":"t._setCssState StackLayout(38)","from":1504646380705,"to":1504646380706},{"domain":"Modules","name":"t._applyStyleFromScope StackLayout(38)","from":1504646380705,"to":1504646380706},{"domain":"Modules","name":"t.applyCssState Label(36)","from":1504646380706,"to":1504646380707},{"domain":"Modules","name":"t._setCssState Label(36)","from":1504646380706,"to":1504646380707},{"domain":"Modules","name":"t._applyStyleFromScope Label(36)","from":1504646380706,"to":1504646380707},{"domain":"Modules","name":"t._setStyleScope Label(36)","from":1504646380706,"to":1504646380707},{"domain":"Modules","name":"t._setStyleScope StackLayout(38)","from":1504646380705,"to":1504646380707},{"domain":"Modules","name":"Label.createNativeView Label(36)","from":1504646380708,"to":1504646380708},{"domain":"Modules","name":"t._setupUI Label(36)","from":1504646380708,"to":1504646380709},{"domain":"Modules","name":"t._setupUI StackLayout(38)","from":1504646380707,"to":1504646380709},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":1504646380709,"to":1504646380709},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":1504646380710,"to":1504646380711},{"domain":"Modules","name":"t.onLoaded Label(36)","from":1504646380710,"to":1504646380712},{"domain":"Modules","name":"View.onLoaded Label(36)","from":1504646380710,"to":1504646380713},{"domain":"Modules","name":"t.onLoaded StackLayout(38)","from":1504646380709,"to":1504646380713},{"domain":"Modules","name":"View.onLoaded StackLayout(38)","from":1504646380709,"to":1504646380713},{"domain":"Modules","name":"t._addView t(9)","from":1504646380705,"to":1504646380713},{"domain":"Modules","name":"t.setAttribute [object Object]","from":1504646380714,"to":1504646380714},{"domain":"Modules","name":"t.setProperty [object Object]","from":1504646380714,"to":1504646380715},{"domain":"Modules","name":"t.applyCssState t(16)","from":1504646380716,"to":1504646380716},{"domain":"Modules","name":"t._setCssState t(16)","from":1504646380716,"to":1504646380716},{"domain":"Modules","name":"t._applyStyleFromScope t(16)","from":1504646380716,"to":1504646380717},{"domain":"Modules","name":"t.createText [object Object]","from":1504646380716,"to":1504646380717},{"domain":"Modules","name":"t.createElement [object Object]","from":1504646380717,"to":1504646380717},{"domain":"Modules","name":"t.applyCssState Label(40)","from":1504646380717,"to":1504646380717},{"domain":"Modules","name":"t._setCssState Label(40)","from":1504646380717,"to":1504646380717},{"domain":"Modules","name":"t._applyStyleFromScope Label(40)","from":1504646380717,"to":1504646380717},{"domain":"Modules","name":"t.setAttribute [object Object]","from":1504646380717,"to":1504646380717},{"domain":"Modules","name":"t.listen [object Object]","from":1504646380718,"to":1504646380718},{"domain":"Modules","name":"t.applyCssState t(17)","from":1504646380718,"to":1504646380718},{"domain":"Modules","name":"t._setCssState t(17)","from":1504646380718,"to":1504646380718},{"domain":"Modules","name":"t._applyStyleFromScope t(17)","from":1504646380718,"to":1504646380718},{"domain":"Modules","name":"t.createText [object Object]","from":1504646380718,"to":1504646380718},{"domain":"Modules","name":"t.parentNode [object Object]","from":1504646380718,"to":1504646380718},{"domain":"Modules","name":"t.nextSibling [object Object]","from":1504646380719,"to":1504646380719},{"domain":"Modules","name":"t.insertBefore [object Object]","from":1504646380719,"to":1504646380719},{"domain":"Modules","name":"t._addView t(19)","from":1504646380719,"to":1504646380719},{"domain":"Modules","name":"t.insertBefore [object Object]","from":1504646380719,"to":1504646380719},{"domain":"Modules","name":"t.insertBefore [object Object]","from":1504646380719,"to":1504646380719},{"domain":"Modules","name":"t.applyCssState Label(40)","from":1504646380719,"to":1504646380719},{"domain":"Modules","name":"t._setCssState Label(40)","from":1504646380719,"to":1504646380720},{"domain":"Modules","name":"t._applyStyleFromScope Label(40)","from":1504646380719,"to":1504646380720},{"domain":"Modules","name":"t._setStyleScope Label(40)","from":1504646380719,"to":1504646380720},{"domain":"Modules","name":"t._addView StackLayout(42)","from":1504646380720,"to":1504646380720},{"domain":"Modules","name":"t.applyCssState StackLayout(42)","from":1504646380721,"to":1504646380721},{"domain":"Modules","name":"t._setCssState StackLayout(42)","from":1504646380721,"to":1504646380721},{"domain":"Modules","name":"t._applyStyleFromScope StackLayout(42)","from":1504646380720,"to":1504646380721},{"domain":"Modules","name":"t.applyCssState Label(40)","from":1504646380721,"to":1504646380722},{"domain":"Modules","name":"t._setCssState Label(40)","from":1504646380721,"to":1504646380722},{"domain":"Modules","name":"t._applyStyleFromScope Label(40)","from":1504646380721,"to":1504646380722},{"domain":"Modules","name":"t._setStyleScope Label(40)","from":1504646380721,"to":1504646380722},{"domain":"Modules","name":"t._setStyleScope StackLayout(42)","from":1504646380720,"to":1504646380722},{"domain":"Modules","name":"Label.createNativeView Label(40)","from":1504646380723,"to":1504646380723},{"domain":"Modules","name":"t._setupUI Label(40)","from":1504646380723,"to":1504646380724},{"domain":"Modules","name":"t._setupUI StackLayout(42)","from":1504646380722,"to":1504646380724},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":1504646380724,"to":1504646380724},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":1504646380724,"to":1504646380725},{"domain":"Modules","name":"t.onLoaded Label(40)","from":1504646380724,"to":1504646380726},{"domain":"Modules","name":"View.onLoaded Label(40)","from":1504646380724,"to":1504646380727},{"domain":"Modules","name":"t.onLoaded StackLayout(42)","from":1504646380724,"to":1504646380727},{"domain":"Modules","name":"View.onLoaded StackLayout(42)","from":1504646380724,"to":1504646380727},{"domain":"Modules","name":"t._addView t(9)","from":1504646380720,"to":1504646380727},{"domain":"Modules","name":"t.setAttribute [object Object]","from":1504646380729,"to":1504646380729},{"domain":"Modules","name":"t.setProperty [object Object]","from":1504646380729,"to":1504646380729},{"domain":"Modules","name":"t.applyCssState t(18)","from":1504646380733,"to":1504646380733},{"domain":"Modules","name":"t._setCssState t(18)","from":1504646380733,"to":1504646380733},{"domain":"Modules","name":"t._applyStyleFromScope t(18)","from":1504646380733,"to":1504646380733},{"domain":"Modules","name":"t.createText [object Object]","from":1504646380733,"to":1504646380733},{"domain":"Modules","name":"t.createElement [object Object]","from":1504646380733,"to":1504646380733},{"domain":"Modules","name":"t.applyCssState Label(44)","from":1504646380734,"to":1504646380734},{"domain":"Modules","name":"t._setCssState Label(44)","from":1504646380734,"to":1504646380734},{"domain":"Modules","name":"t._applyStyleFromScope Label(44)","from":1504646380734,"to":1504646380735},{"domain":"Modules","name":"t.setAttribute [object Object]","from":1504646380733,"to":1504646380735},{"domain":"Modules","name":"t.listen [object Object]","from":1504646380735,"to":1504646380735},{"domain":"Modules","name":"t.applyCssState t(19)","from":1504646380744,"to":1504646380744},{"domain":"Modules","name":"t._setCssState t(19)","from":1504646380744,"to":1504646380744},{"domain":"Modules","name":"t._applyStyleFromScope t(19)","from":1504646380739,"to":1504646380744},{"domain":"Modules","name":"t.createText [object Object]","from":1504646380739,"to":1504646380744},{"domain":"Modules","name":"t.parentNode [object Object]","from":1504646380744,"to":1504646380744},{"domain":"Modules","name":"t.nextSibling [object Object]","from":1504646380744,"to":1504646380744},{"domain":"Modules","name":"t.insertBefore [object Object]","from":1504646380745,"to":1504646380745},{"domain":"Modules","name":"t._addView t(19)","from":1504646380745,"to":1504646380745},{"domain":"Modules","name":"t.insertBefore [object Object]","from":1504646380745,"to":1504646380745},{"domain":"Modules","name":"t.insertBefore [object Object]","from":1504646380745,"to":1504646380745},{"domain":"Modules","name":"t.applyCssState Label(44)","from":1504646380745,"to":1504646380745},{"domain":"Modules","name":"t._setCssState Label(44)","from":1504646380745,"to":1504646380745},{"domain":"Modules","name":"t._applyStyleFromScope Label(44)","from":1504646380745,"to":1504646380746},{"domain":"Modules","name":"t._setStyleScope Label(44)","from":1504646380745,"to":1504646380746},{"domain":"Modules","name":"t._addView StackLayout(46)","from":1504646380746,"to":1504646380746},{"domain":"Modules","name":"t.applyCssState StackLayout(46)","from":1504646380746,"to":1504646380746},{"domain":"Modules","name":"t._setCssState StackLayout(46)","from":1504646380746,"to":1504646380747},{"domain":"Modules","name":"t._applyStyleFromScope StackLayout(46)","from":1504646380746,"to":1504646380747},{"domain":"Modules","name":"t.applyCssState Label(44)","from":1504646380748,"to":1504646380749},{"domain":"Modules","name":"t._setCssState Label(44)","from":1504646380748,"to":1504646380750},{"domain":"Modules","name":"t._applyStyleFromScope Label(44)","from":1504646380747,"to":1504646380750},{"domain":"Modules","name":"t._setStyleScope Label(44)","from":1504646380747,"to":1504646380750},{"domain":"Modules","name":"t._setStyleScope StackLayout(46)","from":1504646380746,"to":1504646380750},{"domain":"Modules","name":"Label.createNativeView Label(44)","from":1504646380752,"to":1504646380752},{"domain":"Modules","name":"t._setupUI Label(44)","from":1504646380752,"to":1504646380753},{"domain":"Modules","name":"t._setupUI StackLayout(46)","from":1504646380750,"to":1504646380753},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":1504646380753,"to":1504646380753},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":1504646380753,"to":1504646380754},{"domain":"Modules","name":"t.onLoaded Label(44)","from":1504646380753,"to":1504646380755},{"domain":"Modules","name":"View.onLoaded Label(44)","from":1504646380753,"to":1504646380756},{"domain":"Modules","name":"t.onLoaded StackLayout(46)","from":1504646380753,"to":1504646380756},{"domain":"Modules","name":"View.onLoaded StackLayout(46)","from":1504646380753,"to":1504646380756},{"domain":"Modules","name":"t._addView t(9)","from":1504646380746,"to":1504646380756},{"domain":"Modules","name":"t.setAttribute [object Object]","from":1504646380758,"to":1504646380758},{"domain":"Modules","name":"t.setProperty [object Object]","from":1504646380758,"to":1504646380758},{"domain":"Modules","name":"t.applyCssState t(20)","from":1504646380761,"to":1504646380761},{"domain":"Modules","name":"t._setCssState t(20)","from":1504646380761,"to":1504646380761},{"domain":"Modules","name":"t._applyStyleFromScope t(20)","from":1504646380761,"to":1504646380761},{"domain":"Modules","name":"t.createText [object Object]","from":1504646380761,"to":1504646380761},{"domain":"Modules","name":"t.createElement [object Object]","from":1504646380761,"to":1504646380761},{"domain":"Modules","name":"t.applyCssState Label(48)","from":1504646380762,"to":1504646380762},{"domain":"Modules","name":"t._setCssState Label(48)","from":1504646380762,"to":1504646380762},{"domain":"Modules","name":"t._applyStyleFromScope Label(48)","from":1504646380762,"to":1504646380762},{"domain":"Modules","name":"t.setAttribute [object Object]","from":1504646380762,"to":1504646380762},{"domain":"Modules","name":"t.listen [object Object]","from":1504646380762,"to":1504646380762},{"domain":"Modules","name":"t.applyCssState t(21)","from":1504646380763,"to":1504646380763},{"domain":"Modules","name":"t._setCssState t(21)","from":1504646380763,"to":1504646380763},{"domain":"Modules","name":"t._applyStyleFromScope t(21)","from":1504646380763,"to":1504646380763},{"domain":"Modules","name":"t.createText [object Object]","from":1504646380763,"to":1504646380763},{"domain":"Modules","name":"t.parentNode [object Object]","from":1504646380763,"to":1504646380763},{"domain":"Modules","name":"t.nextSibling [object Object]","from":1504646380763,"to":1504646380763},{"domain":"Modules","name":"t.insertBefore [object Object]","from":1504646380763,"to":1504646380763},{"domain":"Modules","name":"t._addView t(19)","from":1504646380764,"to":1504646380764},{"domain":"Modules","name":"t.insertBefore [object Object]","from":1504646380764,"to":1504646380764},{"domain":"Modules","name":"t.insertBefore [object Object]","from":1504646380764,"to":1504646380764},{"domain":"Modules","name":"t.applyCssState Label(48)","from":1504646380764,"to":1504646380764},{"domain":"Modules","name":"t._setCssState Label(48)","from":1504646380764,"to":1504646380764},{"domain":"Modules","name":"t._applyStyleFromScope Label(48)","from":1504646380764,"to":1504646380764},{"domain":"Modules","name":"t._setStyleScope Label(48)","from":1504646380764,"to":1504646380764},{"domain":"Modules","name":"t._addView StackLayout(50)","from":1504646380765,"to":1504646380765},{"domain":"Modules","name":"t.applyCssState StackLayout(50)","from":1504646380765,"to":1504646380765},{"domain":"Modules","name":"t._setCssState StackLayout(50)","from":1504646380765,"to":1504646380765},{"domain":"Modules","name":"t._applyStyleFromScope StackLayout(50)","from":1504646380765,"to":1504646380765},{"domain":"Modules","name":"t.applyCssState Label(48)","from":1504646380766,"to":1504646380767},{"domain":"Modules","name":"t._setCssState Label(48)","from":1504646380766,"to":1504646380767},{"domain":"Modules","name":"t._applyStyleFromScope Label(48)","from":1504646380766,"to":1504646380767},{"domain":"Modules","name":"t._setStyleScope Label(48)","from":1504646380766,"to":1504646380767},{"domain":"Modules","name":"t._setStyleScope StackLayout(50)","from":1504646380765,"to":1504646380768},{"domain":"Modules","name":"Label.createNativeView Label(48)","from":1504646380769,"to":1504646380769},{"domain":"Modules","name":"t._setupUI Label(48)","from":1504646380769,"to":1504646380770},{"domain":"Modules","name":"t._setupUI StackLayout(50)","from":1504646380768,"to":1504646380770},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":1504646380770,"to":1504646380770},{"domain":"Modules","name":"\"properties\".initNativeView [object Object]","from":1504646380770,"to":1504646380771},{"domain":"Modules","name":"t.onLoaded Label(48)","from":1504646380770,"to":1504646380772},{"domain":"Modules","name":"View.onLoaded Label(48)","from":1504646380770,"to":1504646380773},{"domain":"Modules","name":"t.onLoaded StackLayout(50)","from":1504646380770,"to":1504646380773},{"domain":"Modules","name":"View.onLoaded StackLayout(50)","from":1504646380770,"to":1504646380774},{"domain":"Modules","name":"t._addView t(9)","from":1504646380765,"to":1504646380774},{"domain":"Modules","name":"t.setAttribute [object Object]","from":1504646380775,"to":1504646380775},{"domain":"Modules","name":"t.setProperty [object Object]","from":1504646380776,"to":1504646380776},{"domain":"Modules","name":"t.onNavigatedTo Page(2)","from":1504646380852,"to":1504646380852},{"from":1504646378210,"to":1504646380852,"name":"ALL"}];
+var background = document.createElement('canvas');
+var context = background.getContext("2d");
+var rulerBackgroundPattern = document.createElement('canvas');
+var rulerBackgroundPatternContext = rulerBackgroundPattern.getContext("2d");
+var timelineBackgroundPattern = document.createElement('canvas');
+var timelineBackgroundPatternContext = timelineBackgroundPattern.getContext("2d");
+var chart = document.createElement('div');
+chart.id = "chart";
+chart.appendChild(background);
+var tracesDiv = document.createElement('div');
+tracesDiv.id = "traces";
+chart.appendChild(tracesDiv);
+document.body.appendChild(chart);
+function createStackTraces(traces) {
+    traces = traces.slice(0).sort(function (a, b) {
+        if (a.from < b.from) {
+            return -1;
+        }
+        else if (a.from === b.from) {
+            if (a.to > b.to) {
+                return -1;
+            }
+            else if (a.to === b.to) {
+                return 0;
+            }
+            else {
+                return 1;
+            }
+        }
+        else {
+            return 1;
+        }
+    });
+    var traceAtDepth = [];
+    var stackedTraces = traces.map(function (original) {
+        var from = original.from, to = original.to, name = original.name, domain = original.domain;
+        var trace = { from: from, to: to };
+        var depth;
+        for (var i = 0; i <= traceAtDepth.length; i++) {
+            if (traceAtDepth[i] === undefined || traceAtDepth[i].to <= from) {
+                depth = i;
+                traceAtDepth[i] = trace;
+                break;
+            }
+        }
+        var parent;
+        for (var i = depth - 1; i >= 0; i--) {
+            var potentialParent = traceAtDepth[i];
+            if (potentialParent.from <= trace.from && potentialParent.to >= trace.to) {
+                trace.parent = parent = potentialParent;
+                break;
+            }
+        }
+        var importance;
+        if (parent) {
+            // If it is very big, or very small - it does not matter, if it is about half its parent then it is important.
+            var ratio = (trace.to - trace.from) / (parent.to - parent.from);
+            importance = depth <= 1 ? 1 : 0.5 - Math.cos(2 * Math.PI * ratio) * 0.5;
+        }
+        else {
+            importance = 1;
+        }
+        var innerText = name + " " + Math.round(to - from) + "ms";
+        var title = name + " " + (to - from) + "ms " + importance;
+        var visible = false;
+        var div = document.createElement('div');
+        div.className = "trace " + domain;
+        tracesDiv.appendChild(div);
+        div.title = title;
+        div.innerText = innerText;
+        div.style.visibility = "hidden";
+        div.style.top = 30 + depth * 21 + "px";
+        div.addEventListener("click", focusTrace);
+        Object.assign(trace, { from: from, to: to, name: name, domain: domain, depth: depth, innerText: innerText, title: title, div: div, visible: visible, leftPx: 0, rightPx: 0, parent: parent, importance: importance });
+        div.trace = trace;
+        return trace;
+    }).sort(function (a, b) { return b.importance - a.importance; });
+    return stackedTraces;
+}
+var stackTraces = createStackTraces(timeline);
+var visibleStackTraces = new Set();
+var min = stackTraces.reduce(function (min, trace) { return Math.min(min, trace.from); }, Number.POSITIVE_INFINITY);
+var max = stackTraces.reduce(function (max, trace) { return Math.max(max, trace.to); }, Number.NEGATIVE_INFINITY);
+var left = min;
+var pixelPerMs = 0.0000001;
+var levelOfDetail = 0 /* High */;
+var debounceLODTimeout;
+function highLOD() {
+    if (debounceLODTimeout) {
+        clearTimeout(debounceLODTimeout);
+    }
+    levelOfDetail = 0 /* High */;
+    tracesDiv.style.pointerEvents = "auto";
+    updateStackTraces();
+}
+function lowLOD() {
+    levelOfDetail = 1 /* Low */;
+    if (debounceLODTimeout) {
+        clearTimeout(debounceLODTimeout);
+    }
+    debounceLODTimeout = setTimeout(highLOD, 1000);
+    tracesDiv.style.pointerEvents = "none";
+}
+function updateStackTraces() {
+    var windowWidth = window.innerWidth;
+    var right = left + (windowWidth / pixelPerMs);
+    var nextVisible = new Set();
+    var showTraces = levelOfDetail === 1 /* Low */ ? 64 : 512;
+    for (var i = 0; i < stackTraces.length && nextVisible.size < showTraces; i++) {
+        var trace = stackTraces[i];
+        trace.leftPx = (trace.from - left) * pixelPerMs;
+        trace.rightPx = (trace.to - left) * pixelPerMs;
+        if (trace.rightPx >= 0 && trace.leftPx <= windowWidth && (trace.rightPx - trace.leftPx >= 2)) {
+            nextVisible.add(trace);
+        }
+    }
+    visibleStackTraces.forEach(function (trace) {
+        if (nextVisible.has(trace)) {
+            return;
+        }
+        trace.div.style.visibility = "collapse";
+    });
+    nextVisible.forEach(function (trace) {
+        var div = trace.div, leftPx = trace.leftPx, rightPx = trace.rightPx;
+        div.style.left = Math.max(-5, leftPx) + "px";
+        div.style.right = Math.max(-5, windowWidth - rightPx) + "px";
+        if (!visibleStackTraces.has(trace)) {
+            div.style.visibility = "visible";
+        }
+    });
+    visibleStackTraces = nextVisible;
+}
+function snap(px) {
+    return Math.floor(px) + 0.5;
+}
+function redrawBackground() {
+    rulerBackgroundPatternContext.fillStyle = "#DDD";
+    rulerBackgroundPatternContext.fillRect(0, 0, rulerBackgroundPattern.width, rulerBackgroundPattern.height);
+    timelineBackgroundPatternContext.fillStyle = "#FFF";
+    timelineBackgroundPatternContext.fillRect(0, 0, timelineBackgroundPattern.width, timelineBackgroundPattern.height);
+    rulerBackgroundPatternContext.lineWidth = 1;
+    rulerBackgroundPatternContext.strokeStyle = "#BBB";
+    rulerBackgroundPatternContext.beginPath();
+    rulerBackgroundPatternContext.moveTo(snap(0), 0);
+    rulerBackgroundPatternContext.lineTo(snap(0), rulerBackgroundPattern.height);
+    rulerBackgroundPatternContext.stroke();
+    timelineBackgroundPatternContext.lineWidth = 1;
+    timelineBackgroundPatternContext.strokeStyle = "#EEE";
+    timelineBackgroundPatternContext.beginPath();
+    timelineBackgroundPatternContext.moveTo(snap(0), 0);
+    timelineBackgroundPatternContext.lineTo(snap(0), timelineBackgroundPattern.height);
+    timelineBackgroundPatternContext.stroke();
+    // timeline horizontal lines
+    timelineBackgroundPatternContext.lineWidth = 1;
+    timelineBackgroundPatternContext.strokeStyle = "#EEE";
+    timelineBackgroundPatternContext.beginPath();
+    timelineBackgroundPatternContext.moveTo(0, snap(timelineBackgroundPattern.height - 1));
+    timelineBackgroundPatternContext.lineTo(timelineBackgroundPattern.width, snap(timelineBackgroundPattern.height - 1));
+    timelineBackgroundPatternContext.stroke();
+    rulerBackgroundPatternContext.strokeStyle = "#CCC";
+    timelineBackgroundPatternContext.strokeStyle = "#EEE";
+    for (var i = 1; i < 10; i++) {
+        var x = rulerBackgroundPattern.width / 1000 * i * 100;
+        rulerBackgroundPatternContext.beginPath();
+        rulerBackgroundPatternContext.moveTo(snap(x), rulerBackgroundPattern.height - rulerBackgroundPattern.height * 0.25);
+        rulerBackgroundPatternContext.lineTo(snap(x), rulerBackgroundPattern.height);
+        rulerBackgroundPatternContext.stroke();
+        timelineBackgroundPatternContext.beginPath();
+        timelineBackgroundPatternContext.moveTo(snap(x), 0);
+        timelineBackgroundPatternContext.lineTo(snap(x), timelineBackgroundPattern.height);
+        timelineBackgroundPatternContext.stroke();
+    }
+    var rulerOffset = -Math.round((left - Math.floor(left / 1000) * 1000) * pixelPerMs);
+    var rulerPattern = context.createPattern(rulerBackgroundPattern, "repeat");
+    context.fillStyle = rulerPattern;
+    context.translate(rulerOffset, 0);
+    context.fillRect(-rulerOffset, 0, background.width, 30);
+    context.translate(-rulerOffset, 0);
+    var timelinePattern = context.createPattern(timelineBackgroundPattern, "repeat");
+    context.fillStyle = timelinePattern;
+    context.translate(rulerOffset, 31);
+    context.fillRect(-rulerOffset, 0, background.width, background.height - 30);
+    context.translate(-rulerOffset, -31);
+    // Separators
+    context.lineWidth = 1;
+    context.strokeStyle = "#666";
+    context.beginPath();
+    context.moveTo(0, snap(30));
+    context.lineTo(background.width, snap(30));
+    context.stroke();
+}
+function resize() {
+    background.width = window.innerWidth;
+    background.height = window.innerHeight;
+}
+function resizeRulers() {
+    // Lets try major rules on seconds and minor rules on 100ms.
+    var width = 1000 * pixelPerMs;
+    rulerBackgroundPattern.width = width;
+    rulerBackgroundPattern.height = 30;
+    timelineBackgroundPattern.width = width;
+    timelineBackgroundPattern.height = 21;
+}
+function clampViewPort() {
+    pixelPerMs = Math.max(window.innerWidth / (max - min), pixelPerMs);
+    left = Math.min(Math.max(min, left), max - window.innerWidth / pixelPerMs);
+}
+function focusTrace(ev) {
+    if (suspendClicks) {
+        return;
+    }
+    var trace = this.trace;
+    pixelPerMs = window.innerWidth / (trace.to - trace.from);
+    left = trace.from;
+    clampViewPort();
+    resizeRulers();
+    redrawBackground();
+    updateStackTraces();
+}
+window.addEventListener("resize", function () {
+    resize();
+    resizeRulers();
+    clampViewPort();
+    updateStackTraces();
+    redrawBackground();
+});
+window.addEventListener("mousewheel", function (e) {
+    var mousePoint = left + e.clientX / pixelPerMs;
+    pixelPerMs = Math.pow(2, Math.log2(pixelPerMs) + Math.max(-0.25, Math.min(0.25, e.wheelDelta)));
+    left = mousePoint - e.clientX / pixelPerMs;
+    lowLOD();
+    clampViewPort();
+    resizeRulers();
+    redrawBackground();
+    updateStackTraces();
+});
+var dragging = false;
+var suspendClicks = false;
+var mouseDown = false;
+var dragOriginXms; // The millisecond at which the chart was grabbed
+var dragOriginXpx;
+window.addEventListener("mousedown", function (e) {
+    dragOriginXms = left + e.clientX / pixelPerMs;
+    dragOriginXpx = e.clientX;
+    mouseDown = true;
+}, true);
+window.addEventListener("mouseup", function (e) {
+    if (dragging) {
+        dragging = false;
+        // Cant find a way to prevent the click action
+        suspendClicks = true;
+        setTimeout(function () { return suspendClicks = false; }, 1);
+    }
+    mouseDown = false;
+});
+window.addEventListener("mousemove", function (e) {
+    if (mouseDown && !dragging && Math.abs(e.clientX - dragOriginXpx) > 8) {
+        dragging = true;
+    }
+    if (dragging) {
+        left = dragOriginXms - e.clientX / pixelPerMs;
+        lowLOD();
+        clampViewPort();
+        redrawBackground();
+        updateStackTraces();
+    }
+});
+clampViewPort();
+resize();
+resizeRulers();
+redrawBackground();
+updateStackTraces();
+
+  </script>
+</body>
+</html>

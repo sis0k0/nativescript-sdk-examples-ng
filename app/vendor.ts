@@ -12,4 +12,9 @@ require("nativescript-angular/platform-static");
 require("nativescript-angular/forms");
 require("nativescript-angular/router");
 
+require("nativescript-angular/animations");
+require("nativescript-telerik-ui/listview");
+require("nativescript-telerik-ui/listview/angular");
+
 require("./rxjs-operators");
+require("./shared");
