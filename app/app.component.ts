@@ -1,6 +1,5 @@
 import { Component } from "@angular/core";
 import { Router, NavigationError } from "@angular/router";
-import "rxjs";
 
 @Component({
     moduleId: module.id,
